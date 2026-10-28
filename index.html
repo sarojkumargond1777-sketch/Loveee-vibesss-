@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Shrishty 💗</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #70264b;
+  background: linear-gradient(135deg, #ffe0ec, #fff0f5, #ffd6e7);
+  overflow-x: hidden;
+}
+
+header {
+  padding: 45px 15px 25px;
+}
+
+h1 {
+  color: #e60073;
+  font-size: 2.2rem;
+}
+
+h2 {
+  color: #d63384;
+}
+
+.section {
+  background: rgba(255,255,255,.88);
+  margin: 20px auto;
+  padding: 24px 16px;
+  width: 92%;
+  max-width: 650px;
+  border-radius: 22px;
+  box-shadow: 0 8px 25px #e78ab344;
+}
+
+button {
+  background: #ff4f9a;
+  color: white;
+  border: none;
+  padding: 12px 17px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin: 5px;
+  font-size: 15px;
+  transition: .2s;
+}
+
+button:hover {
+  transform: scale(1.04);
+  background: #e60073;
+}
+
+.answer {
+  display: block;
+  width: 100%;
+  background: #ffe2ee;
+  color: #922653;
+  border: 2px solid transparent;
+  text-align: left;
+}
+
+.answer.selected {
+  background: #ffb6d2;
+  border-color: #e60073;
+}
+
+#letter, #surprise, #quizResult {
+  display: none;
+  margin-top: 18px;
+  padding: 16px;
+  background: #fff0f6;
+  border-radius: 15px;
+  line-height: 1.7;
+}
+
+.question {
+  text-align: left;
+  margin: 25px 0;
+}
+
+.question p {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.heart {
+  position: fixed;
+  bottom: -30px;
+  animation: floatUp 5s linear forwards;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  padding: 25px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-size:40px">💗🌸💗</div>
+  <h1>For My Shrishty 💕</h1>
+  <p>Meri Shrishty, meriii rasmalai 🥹💗</p>
+  <p>Ek chhoti si website, sirf tumhare liye!</p>
+</header>
+
+<section class="section">
+  <h2>💌 Ek Letter Tumhare Liye</h2>
+  <p>Jab chaaho, apna special message kholo.</p>
+  <button onclick="toggleLetter()">Open My Love Letter 💗</button>
+
+  <div id="letter">
+    Meri pyaari Shrishty 💕<br><br>
+    Tum meri life ka ek bahut special hissa ho.
+    Tumhari smile, tumhari baatein aur tumhari cute si
+    nok-jhok mere liye bahut important hain. 🥹<br><br>
+    Kabhi hum ladte hain, kabhi haste hain, lekin
+    meri wish hai ki hum hamesha ek doosre ki respect
+    karein, ek doosre ko samjhein aur saath mein
+    khush rahein. 🫶<br><br>
+    Tum meri meriii rasmalai ho! 🍥💗<br>
+    <b>Always keep smiling, Shrishty! 🌸</b>
+  </div>
+</section>
+
+<section class="section">
+  <h2>🎁 Secret Surprise</h2>
+  <p>Ek chhota sa surprise tumhara wait kar raha hai.</p>
+  <button onclick="showSurprise()">Surprise kholo 🥹</button>
+
+  <div id="surprise">
+    💖 SURPRISE, MERIII RASMALAI! 💖<br><br>
+    Chahe humari nok-jhok ho ya hasi-mazaak,
+    tumhari khushi important hai. 🌸<br><br>
+    Tumhare liye ek virtual bouquet! 💐💗🧸
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <h2>😂 Hum Dono Ki Jhagda Quiz 💗</h2>
+  <p>Funny answers choose karo! Koi answer right ya wrong nahi hai. 🫶</p>
+
+  <form id="quizForm">
+
+    <div class="question">
+      <p>1. Hum dono mein sabse zyada jhagda kaun karta hai? 😤</p>
+      <button type="button" class="answer" data-q="0">Main 😎</button>
+      <button type="button" class="answer" data-q="0">Shrishty 😏</button>
+      <button type="button" class="answer" data-q="0">Dono barabar 😂</button>
+      <button type="button" class="answer" data-q="0">Jhagda toh hota hi nahi 🥹</button>
+    </div>
+
+    <div class="question">
+      <p>2. Jhagda hone ke baad pehle kaun maanta hai? 🥺</p>
+      <button type="button" class="answer" data-q="1">Main 🙋</button>
+      <button type="button" class="answer" data-q="1">Shrishty 💗</button>
+      <button type="button" class="answer" data-q="1">Dono ek saath 🫶</button>
+      <button type="button" class="answer" data-q="1">Koi nahi, phir se jhagda 😂</button>
+    </div>
+
+    <div class="question">
+      <p>3. Sabse zyada gussa kisko aata hai? 😡</p>
+      <button type="button" class="answer" data-q="2">Mujhe 😤</button>
+      <button type="button" class="answer" data-q="2">Shrishty ko 😈</button>
+      <button type="button" class="answer" data-q="2">Dono ko 😂</button>
+      <button type="button" class="answer" data-q="2">Situation par depend karta hai 🤭</button>
+    </div>
+
+    <div class="question">
+      <p>4. Sorry sabse pehle kaun bolta hai? 💌</p>
+      <button type="button" class="answer" data-q="3">Main 🥹</button>
+      <button type="button" class="answer" data-q="3">Shrishty 💕</button>
+      <button type="button" class="answer" data-q="3">Dono bolte hain 🫶</button>
+      <button type="button" class="answer" data-q="3">Sorry ke bina hi maan jaate hain 😂</button>
+    </div>
+
+    <div class="question">
+      <p>5. Jhagda karne ke baad sabse pehle pyaar se baat kaun karta hai? 🥰</p>
+      <button type="button" class="answer" data-q="4">Main 💗</button>
+      <button type="button" class="answer" data-q="4">Shrishty 🌸</button>
+      <button type="button" class="answer" data-q="4">Dono ek doosre ka wait karte hain 😂</button>
+      <button type="button" class="answer" data-q="4">Jhagda bhool kar normal ho jaate hain 😭</button>
+    </div>
+
+    <button type="submit">Dekhein humari report 😂💞</button>
+    <button type="button" onclick="resetQuiz()">Phir se khelo 🔄</button>
+  </form>
+
+  <div id="quizResult"></div>
+</section>
+
+<footer>
+  Made with 💗 for Shrishty 🌸
+  <p>From your meriii rasmalai's favourite person 🥹</p>
+</footer>
+
+<script>
+function toggleLetter() {
+  const el = document.getElementById("letter");
+  el.style.display =
+    el.style.display === "block" ? "none" : "block";
+  hearts(8);
+}
+
+function showSurprise() {
+  document.getElementById("surprise").style.display = "block";
+  hearts(25);
+}
+
+const selected = {};
+
+document.querySelectorAll(".answer").forEach(button => {
+  button.addEventListener("click", () => {
+    const q = button.dataset.q;
+
+    selected[q] = button.textContent;
+
+    document.querySelectorAll(
+      '.answer[data-q="' + q + '"]'
+    ).forEach(item => item.classList.remove("selected"));
+
+    button.classList.add("selected");
+    document.getElementById("quizResult").style.display = "none";
+  });
+});
+
+document.getElementById("quizForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (Object.keys(selected).length !== 5) {
+    alert("Arre! Saare 5 questions ka answer do na 😂💗");
+    return;
+  }
+
+  const messages = [
+    "Tum dono ki nok-jhok bhi apni jagah special hai 😂💗",
+    "Thodi si takraar, dher saara pyaar! 🌸💕",
+    "Jhagda ho ya manana, ek doosre ki respect hamesha zaroori hai 🫶",
+    "Official result: Nok-jhok ke champions, pyaar ke partners! 🏆💖",
+    "Tum dono ki story mein comedy bhi hai aur cuteness bhi! 🤭💗"
+  ];
+
+  const result = document.getElementById("quizResult");
+  result.innerHTML =
+    "<h3>Quiz complete, cuties! 💌</h3>" +
+    "<p>" + messages[Math.floor(Math.random() * messages.length)] + "</p>" +
+    "<p>Final verdict: Ek doosre ko tang karna allowed, " +
+    "lekin pyaar aur respect hamesha zaroori! 🥹💞</p>";
+
+  result.style.display = "block";
+  hearts(20);
+});
+
+function resetQuiz() {
+  Object.keys(selected).forEach(key => delete selected[key]);
+  document.querySelectorAll(".answer").forEach(button => {
+    button.classList.remove("selected");
+  });
+  document.getElementById("quizResult").style.display = "none";
+}
+
+function hearts(amount) {
+  for (let i = 0; i < amount; i++) {
+    const heart = document.createElement("span");
+    heart.className = "heart";
+    heart.textContent = ["💗", "💖", "💕", "🌸"][Math.floor(Math.random() * 4)];
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (16 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+}
+</script>
+
+</body>
+</html>
